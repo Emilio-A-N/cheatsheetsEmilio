@@ -1,15 +1,18 @@
 Comandos de powerShell:
 
-Ls. Mirar contenido de carpeta
-cd + Nombre de carpeta. acceder a esa carpeta
-cd.. Ir a carpeta superior
+- Ls. Mirar contenido de carpeta
+- cd + Nombre de carpeta. acceder a esa carpeta
+- cd.. Ir a carpeta superior
 
 Comandos de Git
+Comandos de Configuracion de Git
+- git config --global user.name + nombre . Configura tu nombre para Git
+- git config --global user.gmail + correo . Configura tu correo para Git
+- git init. Crea proyecto en Git. Es donde se realizan los cambios.
+- git remote add origin + enlace de github . Esto se hace para enlazar el guardado en Git, con el entorno de web Github. Origin es un nombre de repositorio y puede variar.
 
-git config --global user.name + nombre . Configura tu nombre para Git
-git config --global user.gmail + correo . Configura tu correo para Git
-git init. Crea proyecto en Git. Es donde se realizan los cambios.
-git add + nombre del archivo con extension. Punto de guardado. (Si ponemos Git add . guarda todo)
-git commit -m + nombre . Commit crea una nueva version del guardado. Esto se usa por si se quiere retomar desde este punto de guardado. -m Le da el mensaje del punto de guardado.
-git remote add origin + enlace de github . Esto se hace para enlazar el guardado en Git, con el entorno de web Github. Origin es un nombre de repositorio y puede variar.
-git push + nombre de repositorio (ej; origin) + rama en la que estemos (master o main). 
+Comandos de Actualizacion de Git
+- git add + nombre del archivo con extension. Punto de guardado. (Si ponemos Git add . guarda todo). Añade todos los archivos nuevos o cambiados a la lista de espera.
+- git commit -m + ponleUnNombre . Commit crea una nueva version del guardado. Esto se usa por si se quiere retomar desde este punto de guardado. -m Le da el mensaje del punto de 
+guardado. Crea una versión definitiva con esos archivos. Es el punto de guardado oficial en tu PC.
+- git push + nombre de repositorio (ej; origin) + rama en la que estemos (master o main). Lanza ese punto de guardado por el "puente" (origin) hacia la web de GitHub.
