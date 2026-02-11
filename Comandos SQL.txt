@@ -1,0 +1,82 @@
+
+SQL
+
+DDL
+
+-- Crear una tabla: create.
+create table "nombre de tabla" (
+"columna1" + tipo de dato + condicion,
+"columna2" + tipo de dato + condicion,
+);
+
+-- Modificar estructura de tabla:  alter.
+alter table "nombre de tabla" add "nombre de columna"+ tipo de dato + condicion = Añadir una columna;
+alter table "nombre de tabla" drop column "nombre de columna" = Borrar columna;
+alter table "nombre de tabla" rename column "nombre viejo" to "nombre nuevo" = Renombrar columna;
+alter table "nombre de tabla" rename to "nombre nuevo = Renombrar tabla;
+
+-- Borrar tabla: drop.
+drop "nombre de tabla";
+
+DML
+
+-- Insertar datos en columnas ya hechas: Insert into.
+Inser into "nombre de la tabla" ("columna1", "Columna2", "columna3")
+values ("Valor de columna 1", "Valor de columna 2", "Valor de columna 3"
+
+-- Consultar datos: Select.
+Select "*" o "nombre de columna"
+from "nombre de tabla"
+where "condicion"
+Distinct: No repite valores a la hora de mostrar. 
+
+-- Actualizar datos: Update.
+Update "nombre de tabla"
+set "columna1" = "nuevo valor"
+where "condicion" (Where se usa para poner una condicion y editar TODO lo que sea como where)
+
+-- Borrar datos: Delete.
+delete from "nombre de tabla" where "condicion.
+
+-- Condiciones o Constraints.
+Primary Key: Identificador unico.
+Not Null: Campo nunca está vacio.
+Unique: No se repiten en esta columna.
+Check: Se cumple una condicion logica. 
+Default: Valor por defectp de algo.
+Foreing key; Vincula una tabla con otra. 
+
+-- Clausula Where. 
+Filtrar condiciones con < o > o =. Ej: where salario > 3000. 
+Filtrar por Varchar. Ej: where nombre = 'Emilio'
+Filtrar por rango. Ej: where salario >= 4000 and salario <= 6000  ;  Tambien se puede hacer con Between. Ej: where salario between 4000 and 6000
+Filtrar por vocales. Ej: where nombre like 'a%'. El % quiere decir que tiene mas caracteres.
+Filtrar por Null (o 0 en int). 
+Filtrar por distinto. Ej: where nombre != "Emilio".
+Filtrar por varias condiciones. Ej: where salario >7000 and name = 'Emilio'. And y Or se escriben tal cual. No con && y ||. 
+
+-- Clausula Order By. Por defecto, siempre se ordena de forma ASCendente.
+Ordena de forma ascendente. Ej: select nombre, apellito from empleado ORDER BY apellido asc.
+Ordena de forma descendente. Ej: select nombre, apellito from empleado ORDER BY apellido desc.
+Ordena por diferencia. Ej: select nombre, salario, (salario-3000) as diferencia from empleado order by diferencia desc. En este ejemplo, hemos creado una condicion con el nombre
+	"diferencia". Ordenaremos los salarios de mayor a menor y se les restará 3000.
+Ordenar por posicion. Ej: select nombre"posicion(1)", apellido "posicion(2)" from empleado order by 2 asc. (Donde 2 es apellido)
+
+-- Clausula Group By. Se usa para agrupar y hacer calculos.
+Calcula promedio (AVG) . Ej: select id_departamento, avg(salario) from empleado group by id_departamento. En este ejemplo agrupa a toda la tabla por departamentos y del
+	atributo salario hace la media.
+Calcula la cantidad de algo (Count). Ej: select id_departamento, count (*) from empleado group by id_departamento. En este ejemplo agrupa por id_departamento y cuenta todos 
+	los empleados de cada departamento 
+Calcula la suma (Sum). Ej: select sum (salario) from empleados. En este ejemplo, suma todos los salarios de la tabla empleados.
+Calcula el maximo de algo (MAX). Ej: Select id_departamento, MAX (salario) from empleado group by id_departamento. En este ejemplo agrupa por id_departamento y calcula el
+	mayor salario de cada departamento.
+Calcula el minimo de algo (MIN). Igual que max. 
+
+-- Clausula Having. Se usa para mostrar informacion con informacion agrupada con condiciones. Como con group By, pero con condiciones.
+ej: 
+select id_departamento, avg (salario)
+from empleado
+group by id_departamento
+having avg (salario) > 4000.
+
+-- La diferencia entre where y having es que where actua sobre datos sueltos y having sobre datos agrupados -- 
